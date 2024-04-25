@@ -20,3 +20,5 @@ There are two ways to use markdown-to-poster:
 ## Current status
 
 In progress, scheduled for launch in a week.
+
+⭐ Feel free to hit the Star and Watch buttons to keep tabs on our progress.
