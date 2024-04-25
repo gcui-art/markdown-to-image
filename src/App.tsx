@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { MdToPoster } from './packages'
 import './App.css'
 
