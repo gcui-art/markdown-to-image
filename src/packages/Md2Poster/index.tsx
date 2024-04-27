@@ -4,19 +4,27 @@ import { domToBlob } from 'modern-screenshot'
 
 type ICardType = 'QuoteCard' | 'NewsDigest'
 type IThemeType = 'blue' | 'pink'
+type IAspectRatioType = 'auto' | '16/9' | '1/1' | '4/3'
 
 interface Props {
   children: string | ReactNode
   className?: string
   theme?: IThemeType
   template?: ICardType
-  aspectRatio?: string
+  aspectRatio?: IAspectRatioType
   canCopy?: boolean
 }
 
 const themeMapClassName = {
   blue: 'bg-gradient-to-r from-cyan-500 to-blue-500',
   pink: 'bg-gradient-to-r from-purple-500 to-pink-500',
+}
+
+const aspectRatioMapClassName = {
+  auto: 'aspect-auto',
+  '16/9': 'aspect-video',
+  '1/1': 'aspect-square',
+  '4/3': 'aspect-[4/3]',
 }
 
 async function sleep(millisecond: number) {
@@ -56,7 +64,15 @@ const Button = ({
   )
 }
 
-const Md2Poster = ({ children, theme = 'blue', template = 'QuoteCard', className, canCopy }: Props) => {
+const Md2Poster = ({
+  children,
+  theme = 'blue',
+  template = 'QuoteCard',
+  className,
+  canCopy,
+  aspectRatio = 'auto',
+}: Props) => {
+  const aspectRatioClassName = aspectRatioMapClassName[aspectRatio]
   const themeClassName = themeMapClassName[theme]
   const ref = useRef<HTMLDivElement>(null)
   const [loading, setLoading] = useState(false)
@@ -102,7 +118,7 @@ const Md2Poster = ({ children, theme = 'blue', template = 'QuoteCard', className
   if (template === 'QuoteCard') {
     return (
       <>
-        <div ref={ref} className={cn('w-full mt-8 p-6 md:p-10', themeClassName, className)}>
+        <div ref={ref} className={cn('w-full mt-8 p-6 md:p-10', themeClassName, aspectRatioClassName, className)}>
           {children}
         </div>
         {renderCopy()}
@@ -111,7 +127,7 @@ const Md2Poster = ({ children, theme = 'blue', template = 'QuoteCard', className
   } else {
     return (
       <>
-        <div ref={ref} className={cn(className)}>
+        <div ref={ref} className={cn(aspectRatioClassName, className)}>
           {children}
         </div>
         {renderCopy()}
