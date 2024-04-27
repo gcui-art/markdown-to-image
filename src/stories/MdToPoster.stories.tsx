@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { fn } from '@storybook/test'
 import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from '../packages/index'
 
 const DemoComponent = () => {
