@@ -44,7 +44,7 @@ function App() {
   }
   const markdown = `
   # h1 test
-  ## h2 
+  ## h2 666
   A paragraph with *emphasis* and **strong importance**.
 
   > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
@@ -57,7 +57,7 @@ function App() {
   return (
     <div className="flex max-w-5xl mx-auto flex-col py-2 min-h-screen">
       <main className="flex max-w-2xl sm:max-w-xl w-full flex-col mx-auto">
-        <Md2Poster theme="pink">
+        <Md2Poster theme="pink" canCopy>
           <Md2PosterHeader>test header</Md2PosterHeader>
           <Md2PosterContent>{markdown}</Md2PosterContent>
           <Md2PosterFooter>test footer</Md2PosterFooter>
