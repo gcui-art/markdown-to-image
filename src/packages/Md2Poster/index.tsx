@@ -1,10 +1,11 @@
 import { ReactNode, useRef, useState, useCallback } from 'react'
 import { cn } from '../../lib/utils'
-import {  toBlob } from 'html-to-image'
+import { toBlob } from 'html-to-image'
 
 type ICardType = 'QuoteCard' | 'NewsDigest'
 type IThemeType = 'blue' | 'pink'
 type IAspectRatioType = 'auto' | '16/9' | '1/1' | '4/3'
+type ISizeType = 'desktop' | 'mobile'
 
 interface Props {
   children: string | ReactNode
@@ -13,6 +14,7 @@ interface Props {
   template?: ICardType
   aspectRatio?: IAspectRatioType
   canCopy?: boolean
+  size?: ISizeType
 }
 
 const themeMapClassName = {
@@ -64,25 +66,6 @@ const Button = ({
   )
 }
 
-// function replaceImagesSrc(element: HTMLDivElement) {
-//   const domElement = element
-//   const ORIGIN_HOST = 'https://proxy.beeposter.com'
-//   if (domElement) {
-//     const imgElements = domElement.getElementsByTagName('img')
-//     Array.from(imgElements).forEach((img) => {
-//       const originalSrc = img.src
-//       if (!originalSrc.startsWith(ORIGIN_HOST)) {
-//         // Replace the src attribute of each img element to use the allorigins service
-//         const newSrc = `${ORIGIN_HOST}/fetch?url=${encodeURIComponent(originalSrc)}`
-//         img.src = newSrc
-//       }
-//     })
-//     console.log('All <img> tags have been effectively substituted with images sourced from AllOrigins.')
-//   } else {
-//     console.error('The specified DOM element was not found. Please verify the correctness of the DOM ID.')
-//   }
-// }
-
 const Md2Poster = ({
   children,
   theme = 'blue',
@@ -90,11 +73,13 @@ const Md2Poster = ({
   className,
   canCopy,
   aspectRatio = 'auto',
+  size = 'mobile',
 }: Props) => {
   const aspectRatioClassName = aspectRatioMapClassName[aspectRatio]
   const themeClassName = themeMapClassName[theme]
   const ref = useRef<HTMLDivElement>(null)
   const [loading, setLoading] = useState(false)
+  const sizeClassName = size === 'mobile' ? 'max-w-lg': 'max-w-5xl'
 
   const handleCopy = useCallback(async () => {
     const element = ref.current
@@ -123,11 +108,11 @@ const Md2Poster = ({
   const renderCopy = () => {
     return (
       canCopy && (
-        <div className="py-2 flex justify-end">
+        <span className="py-2 inline-block">
           <Button onClick={handleCopy} loading={loading}>
             copy
           </Button>
-        </div>
+        </span>
       )
     )
   }
@@ -135,7 +120,7 @@ const Md2Poster = ({
   if (template === 'QuoteCard') {
     return (
       <>
-        <div ref={ref} className={cn('w-full mt-8 p-6 md:p-10', themeClassName, aspectRatioClassName, className)}>
+        <div ref={ref} className={cn('w-full p-6 md:p-10', themeClassName, aspectRatioClassName, className, sizeClassName)}>
           {children}
         </div>
         {renderCopy()}
@@ -144,7 +129,7 @@ const Md2Poster = ({
   } else {
     return (
       <>
-        <div ref={ref} className={cn(aspectRatioClassName, className)}>
+        <div ref={ref} className={cn(aspectRatioClassName, className, sizeClassName)}>
           {children}
         </div>
         {renderCopy()}

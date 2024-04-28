@@ -1,5 +1,5 @@
 import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from './packages'
-import './App.css'
+// import './App.css'
 
 // const Footer = () => {
 //   return (
@@ -147,15 +147,13 @@ function App() {
   `
 
   return (
-    <div className="flex max-w-5xl mx-auto flex-col py-2 min-h-screen">
-      <main className="flex max-w-2xl sm:max-w-xl w-full flex-col mx-auto">
-        <Md2Poster theme="pink" canCopy>
+      <main>
+        <Md2Poster theme="pink" canCopy size='desktop'>
           <Md2PosterHeader>test header</Md2PosterHeader>
           <Md2PosterContent>{markdown}</Md2PosterContent>
           <Md2PosterFooter>test footer</Md2PosterFooter>
         </Md2Poster>
       </main>
-    </div>
   )
 }
 
