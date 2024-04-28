@@ -1,6 +1,6 @@
 import { ReactNode, useRef, useState, useCallback } from 'react'
 import { cn } from '../../lib/utils'
-import { domToBlob } from 'modern-screenshot'
+import {  toBlob } from 'html-to-image'
 
 type ICardType = 'QuoteCard' | 'NewsDigest'
 type IThemeType = 'blue' | 'pink'
@@ -64,6 +64,24 @@ const Button = ({
   )
 }
 
+function replaceImagesSrc(element: HTMLDivElement) {
+  const domElement = element
+  if (domElement) {
+    const imgElements = domElement.getElementsByTagName('img')
+    Array.from(imgElements).forEach((img) => {
+      const originalSrc = img.src
+      if (!originalSrc.startsWith('https://api.allorigins.win')) {
+        // Replace the src attribute of each img element to use the allorigins service
+        const newSrc = `https://api.allorigins.win/raw?url=${encodeURIComponent(originalSrc)}`
+        img.src = newSrc
+      }
+    })
+    console.log('All <img> tags have been effectively substituted with images sourced from AllOrigins.')
+  } else {
+    console.error('The specified DOM element was not found. Please verify the correctness of the DOM ID.')
+  }
+}
+
 const Md2Poster = ({
   children,
   theme = 'blue',
@@ -84,10 +102,9 @@ const Md2Poster = ({
     }
     setLoading(true)
     await sleep(100)
-    const blob = await domToBlob(element, {
-      scale: window.devicePixelRatio || 1,
-    })
+    replaceImagesSrc(element)
     try {
+      const blob = (await toBlob(element)) as Blob
       await navigator.clipboard.write([
         new ClipboardItem({
           'image/png': blob,
