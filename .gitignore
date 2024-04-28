@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 *storybook.log
+
+
+example/node_modules
