@@ -9,6 +9,10 @@ const resolvePath = (str: string) => path.resolve(__dirname, str)
 
 export default defineConfig({
   plugins: [react()],
+  esbuild: {
+    pure: ['console.log'],
+    drop: ['debugger'],
+  },
   build: {
     lib: {
       entry: resolvePath('src/packages/index.tsx'),
