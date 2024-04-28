@@ -66,13 +66,14 @@ const Button = ({
 
 function replaceImagesSrc(element: HTMLDivElement) {
   const domElement = element
+  const ORIGIN_HOST = 'https://proxy.beeposter.com'
   if (domElement) {
     const imgElements = domElement.getElementsByTagName('img')
     Array.from(imgElements).forEach((img) => {
       const originalSrc = img.src
-      if (!originalSrc.startsWith('https://api.allorigins.win')) {
+      if (!originalSrc.startsWith(ORIGIN_HOST)) {
         // Replace the src attribute of each img element to use the allorigins service
-        const newSrc = `https://api.allorigins.win/raw?url=${encodeURIComponent(originalSrc)}`
+        const newSrc = `${ORIGIN_HOST}/fetch?url=${encodeURIComponent(originalSrc)}`
         img.src = newSrc
       }
     })
