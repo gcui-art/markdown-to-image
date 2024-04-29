@@ -6,8 +6,8 @@ type ICardType = 'QuoteCard' | 'NewsDigest'
 type IThemeType =
   //gradient
   'blue' | 'pink' | 'purple' | 'green' | 'yellow' | 'gray' | 'red' | 'indigo' |
-  //image
-  'WarmRadiance' | 'CosmicTwilight' | 'PastelStripes' | 'MistyMountains' | 'SpringGradientWave'
+  //image bg
+  'SpringGradientWave'
 type IAspectRatioType = 'auto' | '16/9' | '1/1' | '4/3'
 type ISizeType = 'desktop' | 'mobile'
 
@@ -22,6 +22,7 @@ interface Props {
 }
 
 const themeMapClassName = {
+  //gradient
   blue: 'bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-500',
   pink: 'bg-gradient-to-br from-pink-600/80 from-20% via-red-400/70 to-pink-500/70',
   purple: 'bg-gradient-to-r from-purple-900 to-purple-500/70',
@@ -30,10 +31,7 @@ const themeMapClassName = {
   gray: 'bg-gradient-to-br from-black/90  via-gray-700  to-black/90',
   red: 'bg-gradient-to-r from-red-500 to-orange-500',
   indigo: 'bg-gradient-to-br from-indigo-700 via-blue-600/80 to-indigo-700',
-  WarmRadiance: 'bg-warm-radiance bg-cover',
-  CosmicTwilight: 'bg-cosmic-twilight bg-cover',
-  PastelStripes: 'bg-pastel-stripes bg-cover',
-  MistyMountains: 'bg-misty-mountains bg-cover',
+  //image bg
   SpringGradientWave: 'bg-spring-gradient-wave bg-cover'
 }
 

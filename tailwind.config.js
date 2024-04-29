@@ -10,11 +10,7 @@ export default {
         '4/3': '4 / 3',
       },
       backgroundImage: {
-        'warm-radiance': "url('/bg/WarmRadiance.jpeg')",
-        'cosmic-twilight': "url('/bg/CosmicTwilight.jpeg')",
-        'pastel-stripes': "url('/bg/PastelStripes.jpeg')",
-        'misty-mountains': "url('/bg/MistyMountains.jpeg')",
-        'spring-gradient-wave': "url('/bg/SpringGradientWave.png')"
+        'spring-gradient-wave': "url('/bg/SpringGradientWave.jpg')"
       }
     },
   },
