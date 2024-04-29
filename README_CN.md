@@ -75,7 +75,7 @@ return (
 
 )
 ```
-
+更多组件参数请阅读文档：[beeposter.com/docs](https://beeposter.com/docs)
 
 ### 使用在线编辑器
 #### 使用官方部署的在线编辑器
