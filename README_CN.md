@@ -1,5 +1,7 @@
 # Markdown To Poster
 
+![markdown-to-poster banner](https://github.com/gcui-art/markdown-to-poster/blob/main/public/banner.jpg)
+
 这个 React 组件用于将 Markdown 渲染为漂亮的社交媒体图片。此外，该项目还包括一个内置的 WEB UI，一键部署后，可以当做 Markdown 转海报图片在线编辑器使用。
 
 ## 功能
