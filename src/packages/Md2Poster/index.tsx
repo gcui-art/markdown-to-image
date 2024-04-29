@@ -59,7 +59,8 @@ const Button = ({
 }) => {
   return (
     <button
-      className={`flex items-center bg-indigo-50 text-indigo-600 hover:bg-indigo-100 active:bg-indigo-200  font-bold py-2 px-4 rounded focus:outline-none ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+      className={`flex items-center bg-indigo-50 text-indigo-600 hover:bg-indigo-100 active:bg-indigo-200  
+      font-bold py-2 px-4 rounded focus:outline-none ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
       onClick={onClick}
       disabled={loading}
     >
