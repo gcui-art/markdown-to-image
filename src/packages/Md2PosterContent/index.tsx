@@ -19,15 +19,12 @@ const Md2PosterContent = ({ children, className, markdownProps, articleClassName
       <div className={cn(wrapClassName, className)}>
         <article className={articleClassName}>
           <Markdown
-            // urlTransform={(url: string, key: string, node) => {
-            //   return url
-            // }}
             components={{
               img(props) {
                 const { node, src, ...rest } = props
                 const ORIGIN_HOST = 'https://proxy.beeposter.com'
-                const newSrc = src ? `${ORIGIN_HOST}/fetch?url=${encodeURIComponent(src)}`: src
-                return <img {...rest} src={newSrc}/>
+                const newSrc = src ? `${ORIGIN_HOST}/fetch?url=${encodeURIComponent(src)}` : src
+                return <img {...rest} src={newSrc} />
               },
             }}
             remarkPlugins={[remarkGfm]}
