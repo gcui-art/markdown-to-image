@@ -1,6 +1,5 @@
 {
   "name": "markdown-to-poster",
-  "private": true,
   "version": "0.0.1",
   "type": "module",
   "license": "Apache-2.0",

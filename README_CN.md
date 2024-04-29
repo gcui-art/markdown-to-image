@@ -35,7 +35,7 @@
 用 npm 安装：
 
 ```bash
-npm install markdown-to-poster
+npm i markdown-to-poster
 ```
 
 用 pnpm 安装：
@@ -115,4 +115,4 @@ return (
 
 - 我们的其他开源项目: [Suno AI API](https://github.com/gcui-art/suno-api)
 - 演示站点: [beeposter.com](https://beeposter.com)
-- NPM Package：[npm:markdown-to-poster](https://www.npmjs.com/package/@gcui/markdown-to-poster)
+- NPM Package：[npm:markdown-to-poster](https://www.npmjs.com/package/markdown-to-poster)

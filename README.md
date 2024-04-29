@@ -35,7 +35,7 @@ There are two ways to use markdown-to-poster:
 Install with npm:
 
 ```bash
-npm install markdown-to-poster
+npm i markdown-to-poster
 ```
 
 Install with pnpm:
