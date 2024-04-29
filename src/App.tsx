@@ -147,13 +147,13 @@ function App() {
   `
 
   return (
-      <main>
-        <Md2Poster theme="pink" canCopy size='desktop'>
-          <Md2PosterHeader>test header</Md2PosterHeader>
-          <Md2PosterContent>{markdown}</Md2PosterContent>
-          <Md2PosterFooter>test footer</Md2PosterFooter>
-        </Md2Poster>
-      </main>
+    <main>
+      <Md2Poster theme="SpringGradientWave" canCopy size='mobile'>
+        <Md2PosterHeader>{new Date().toISOString().slice(0, 10)}</Md2PosterHeader>
+        <Md2PosterContent>{markdown}</Md2PosterContent>
+        <Md2PosterFooter>Powered by BeePoster.com</Md2PosterFooter>
+      </Md2Poster>
+    </main>
   )
 }
 
