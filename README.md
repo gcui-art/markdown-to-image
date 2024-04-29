@@ -1,4 +1,5 @@
 # Markdown To Poster
+
 This React component renders Markdown as visually appealing social media images. The project also includes a built-in web editor that can be used as an online Markdown-to-poster editor with a simple one-click deployment.
 
 ![markdown-to-poster banner](https://github.com/gcui-art/markdown-to-poster/blob/main/public/banner.jpg)
@@ -32,25 +33,34 @@ There are two ways to use markdown-to-poster:
 #### Installation
 
 Install with npm:
-```
-npm install markdown-to-poster
+
+```bash
+npm i markdown-to-poster
 ```
 
 Install with pnpm:
-```
+
+```bash
 pnpm install markdown-to-poster
 ```
 
 yarn add markdown-to-poster:
-```
+
+```bash
 yarn add markdown-to-poster
 ```
 
 #### Usage
 
 Basic example:
+
 ```javascript
-import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-poster'
+import {
+  Md2Poster,
+  Md2PosterContent,
+  Md2PosterHeader,
+  Md2PosterFooter,
+} from "markdown-to-poster";
 
 // ...
 
@@ -58,7 +68,7 @@ const markdown = `
 # AI Morning Updates
 > On April 29th, what's the latest in the AI field that should be on your radar?
 ...
-`
+`;
 
 // ...
 
@@ -70,29 +80,36 @@ return (
     <Md2PosterFooter>Powered by BeePoster.com</Md2PosterFooter>
   </Md2Poster>
   // ...
-)
+);
 ```
+
 To explore additional component parameters, check out the documentation: [beeposter.com/docs](https://beeposter.com/docs)
 
 ### Using the Web Editor
 
 #### Official Web Editor
+
 👉 Visit: [beeposter.com](https://beeposter.com)
 
 #### Deploying Your Own Web Editor
+
 [Deploy Editor with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/gcui-art/markdown-to-poster&root-directory=example&project-name=markdown-to-poster&repository-name=markdown-to-poster)
 
 ## Contributing
+
 There are four ways you can support this project:
+
 1. Fork and Submit Pull Requests: We welcome any PRs that enhance the component or editor.
 2. Open Issues: We appreciate reasonable suggestions and bug reports.
 3. Donate: If this project has helped you, consider buying us a coffee using the Sponsor button at the top of the project. Cheers! ☕
 4. Spread the Word: Recommend this project to others, star the repo, or add a backlink after using the project.
 
 ## License
+
 This project is licensed under the permissive Apache 2.0 open source license.
 
 ## Questions, Suggestions, Issues, or Bugs?
+
 We use GitHub Issues to manage feedback. Feel free to open an issue, and we'll address it promptly.
 
 ## Related Links

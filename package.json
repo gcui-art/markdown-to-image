@@ -1,8 +1,22 @@
 {
   "name": "markdown-to-poster",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "license": "Apache-2.0",
+  "description": "markdown-to-poster component renders Markdown as visually appealing social media images. The project also includes a built-in web editor that can be used as an online Markdown-to-poster editor with a simple one-click deployment.",
+  "keywords": [
+    "markdown",
+    "poster",
+    "react",
+    "vite",
+    "tailwindcss",
+    "typescript"
+  ],
+  "homepage": "https://beeposter.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gcui-art/markdown-to-poster.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
