@@ -45,15 +45,20 @@ function App() {
 
 
   const markdown = `
-# AI早报 - 4月29日
+# AI Morning Updates
+> On April 29th, what's the latest in the AI field that should be on your radar?
+
 ![image](https://imageio.forbes.com/specials-images/imageserve/64b5825a5b9b4d3225e9bd15/artificial-intelligence--ai/960x0.jpg?format=jpg&width=1440)
-1. **元象公司发布多模态大型模型XVERSE-V**: 支持任意宽高比的图像输入，在多个权威评测中表现优异，并已开源。
-2. **通义千问团队开源千亿参数模型Qwen1.5-110B**: 采用Transformer解码器架构，支持多语言，具有高效注意力机制。
-3. **生数科技与清华大学发布视频大模型Vidu**: 采用Diffusion与Transformer融合架构，一键生成高清视频，国际领先。
-4. **Mutable Al推出Auto Wiki v2**: 自动将代码转化为维基百科风格的文章:解决代码文档化难题。
-5. **谷歌在美国新建数据中心**: 计划投资30亿美元在印第安纳州建设数据中心园区，扩建弗吉尼亚州设施，推出人工智能机会基金。
-6. **中国信息通信研究院发布汽车大模型标准**: 旨在规范和推动汽车行业智能化发展.
-7. Kimi chat移动端应用更新:版本1.2.1全面重构用户界面，引入新的浅色模式，提供舒适直观的体验。
+1. **Tech hiccups in AI car race: NTU team misses final** : Collaboration with UAE tech group faces technical challenges in international AI car race.
+2. **AI complicates kids' online safety: Parents take charge** : Rapid AI evolution poses challenges, prompting parents to take active measures for children's safety.
+3. **AI boom's secret winners: Companies fueling growth** : Investors find unique opportunities in stock market's AI boom, with certain companies driving progress.
+4. **AI redefining automation in competitive market** : AI is no longer just a buzzword, as companies across industries deploy it for competitive edge.
+5. **London private school introduces AI classes for children** : Leading school in London introduces AI lessons to help children adapt to evolving technology landscape.
+6. **China utilizes supercomputer for AI training amid chip constraints** : Progress in leveraging supercomputers and domestic AI chips for training large language models in China.
+7. **AI-Driven Age of New Media: Opportunities and Challenges** : CGTN panel discusses opportunities and challenges in the AI-driven age of new media.
+8. **Apple rumored to resume OpenAI discussions for generative AI features** : Speculations suggest Apple may collaborate with OpenAI for generative AI features on upcoming iPhones.
+9. **Tech tycoon's family office invests in AI for $10 billion fund** : Premji Invest to inject more funds into AI initiatives, supporting a $10 billion fund managed by Azim Premji.
+10. **Banks embrace Cloud and AI for innovation and partnerships** : Banking industry shifts towards innovation, collaboration, and customer-centricity through adoption of Cloud and AI technologies.
   `
 
   return (
@@ -61,14 +66,18 @@ function App() {
       <Md2Poster theme="SpringGradientWave" canCopy size='mobile'>
         <Md2PosterHeader className='flex justify-between items-center px-4'>
           <span>
-            @LingGame
+            @Nickname
           </span>
           <span>
             {new Date().toISOString().slice(0, 10)}
           </span>
         </Md2PosterHeader>
         <Md2PosterContent>{markdown}</Md2PosterContent>
-        <Md2PosterFooter>Powered by BeePoster.com</Md2PosterFooter>
+        <Md2PosterFooter className='flex justify-center items-center gap-1'>
+          <img src="/logo.png" alt="beeposter" className='w-4 h-4' />
+          <span className='text-sm font-medium'>Powered by BeePoster.com</span>
+
+        </Md2PosterFooter>
       </Md2Poster>
     </main>
   )

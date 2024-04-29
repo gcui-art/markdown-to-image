@@ -24,9 +24,9 @@ interface Props {
 const themeMapClassName = {
   //gradient
   blue: 'bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-500',
-  pink: 'bg-gradient-to-br from-pink-600/80 from-20% via-red-400/70 to-pink-500/70',
-  purple: 'bg-gradient-to-r from-purple-900 to-purple-500/70',
-  green: 'bg-gradient-to-br from-green-950/80 via-lime-600/90 to-green-600/80',
+  pink: 'bg-gradient-to-br from-pink-600/80  via-red-400/80 to-pink-600/60',
+  purple: 'bg-gradient-to-r from-purple-600 to-purple-700',
+  green: 'bg-gradient-to-br from-green-600/80 to-green-800/80',
   yellow: 'bg-gradient-to-br from-yellow-500 via-orange-300 to-yellow-500',
   gray: 'bg-gradient-to-br from-black/90  via-gray-700  to-black/90',
   red: 'bg-gradient-to-r from-red-500 to-orange-500',
@@ -59,7 +59,8 @@ const Button = ({
 }) => {
   return (
     <button
-      className={`flex items-center bg-indigo-50 text-indigo-600 hover:bg-indigo-100 active:bg-indigo-200  font-bold py-2 px-4 rounded focus:outline-none ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+      className={`flex items-center bg-indigo-50 text-indigo-600 hover:bg-indigo-100 active:bg-indigo-200  
+      font-bold py-2 px-4 rounded focus:outline-none ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
       onClick={onClick}
       disabled={loading}
     >

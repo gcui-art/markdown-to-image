@@ -14,9 +14,9 @@ interface Props {
 
 const Md2PosterContent = ({
   children, className, markdownProps,
-  articleClassName = 'prose prose-gray prose-img:rounded-lg prose-img:border prose-img:opacity-100'
+  articleClassName = 'prose prose-gray prose-img:rounded-lg prose-img:border'
 }: Props) => {
-  const wrapClassName = 'flex flex-col bg-white px-4 sm:px-8 py-8 rounded-2xl border shadow-2xl shadow-gray-950/50'
+  const wrapClassName = 'flex flex-col bg-white/90 px-4 sm:px-8 py-8 rounded-2xl border shadow-2xl shadow-gray-950/50'
   if (typeof children === 'string') {
     return (
       <div className={cn(wrapClassName, className)}>
