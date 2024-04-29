@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Md2PosterFooter = ({ children, className }: Props) => {
-  return <div className={cn('text-gray-600 py-2', className)}>{children}</div>
+  return <div className={cn('text-gray-100 py-4 text-center', className)}>{children}</div>
 }
 
 export default Md2PosterFooter

@@ -3,7 +3,11 @@ import { cn } from '../../lib/utils'
 import { toBlob } from 'html-to-image'
 
 type ICardType = 'QuoteCard' | 'NewsDigest'
-type IThemeType = 'blue' | 'pink'
+type IThemeType =
+  //gradient
+  'blue' | 'pink' | 'purple' | 'green' | 'yellow' | 'gray' | 'red' | 'indigo' |
+  //image
+  'WarmRadiance' | 'CosmicTwilight' | 'PastelStripes' | 'MistyMountains' | 'SpringGradientWave'
 type IAspectRatioType = 'auto' | '16/9' | '1/1' | '4/3'
 type ISizeType = 'desktop' | 'mobile'
 
@@ -18,8 +22,19 @@ interface Props {
 }
 
 const themeMapClassName = {
-  blue: 'bg-gradient-to-r from-cyan-500 to-blue-500',
-  pink: 'bg-gradient-to-r from-purple-500 to-pink-500',
+  blue: 'bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-500',
+  pink: 'bg-gradient-to-br from-pink-600/80 from-20% via-red-400/70 to-pink-500/70',
+  purple: 'bg-gradient-to-r from-purple-900 to-purple-500/70',
+  green: 'bg-gradient-to-br from-green-950/80 via-lime-600/90 to-green-600/80',
+  yellow: 'bg-gradient-to-br from-yellow-500 via-orange-300 to-yellow-500',
+  gray: 'bg-gradient-to-br from-black/90  via-gray-700  to-black/90',
+  red: 'bg-gradient-to-r from-red-500 to-orange-500',
+  indigo: 'bg-gradient-to-br from-indigo-700 via-blue-600/80 to-indigo-700',
+  WarmRadiance: 'bg-warm-radiance bg-cover',
+  CosmicTwilight: 'bg-cosmic-twilight bg-cover',
+  PastelStripes: 'bg-pastel-stripes bg-cover',
+  MistyMountains: 'bg-misty-mountains bg-cover',
+  SpringGradientWave: 'bg-spring-gradient-wave bg-cover'
 }
 
 const aspectRatioMapClassName = {
@@ -69,7 +84,7 @@ const Button = ({
 const Md2Poster = ({
   children,
   theme = 'blue',
-  template = 'QuoteCard',
+  template = 'NewsDigest',
   className,
   canCopy,
   aspectRatio = 'auto',
@@ -79,7 +94,7 @@ const Md2Poster = ({
   const themeClassName = themeMapClassName[theme]
   const ref = useRef<HTMLDivElement>(null)
   const [loading, setLoading] = useState(false)
-  const sizeClassName = size === 'mobile' ? 'max-w-lg': 'max-w-5xl'
+  const sizeClassName = size === 'mobile' ? 'max-w-lg p-6' : 'max-w-4xl p-16'
 
   const handleCopy = useCallback(async () => {
     const element = ref.current
@@ -120,7 +135,7 @@ const Md2Poster = ({
   if (template === 'QuoteCard') {
     return (
       <>
-        <div ref={ref} className={cn('w-full p-6 md:p-10', themeClassName, aspectRatioClassName, className, sizeClassName)}>
+        <div ref={ref} className={cn('w-full', themeClassName, aspectRatioClassName, className, sizeClassName)}>
           {children}
         </div>
         {renderCopy()}
@@ -129,7 +144,7 @@ const Md2Poster = ({
   } else {
     return (
       <>
-        <div ref={ref} className={cn(aspectRatioClassName, className, sizeClassName)}>
+        <div ref={ref} className={cn("w-full", themeClassName, aspectRatioClassName, className, sizeClassName)}>
           {children}
         </div>
         {renderCopy()}

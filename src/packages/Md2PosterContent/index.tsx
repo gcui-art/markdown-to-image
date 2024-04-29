@@ -13,7 +13,7 @@ interface Props {
 
 
 const Md2PosterContent = ({ children, className, markdownProps, articleClassName = 'prose prose-gray' }: Props) => {
-  const wrapClassName = 'flex flex-col bg-white p-4 rounded-2xl border'
+  const wrapClassName = 'flex flex-col bg-white px-4 py-8 rounded-2xl border shadow-2xl shadow-gray-950/50'
   if (typeof children === 'string') {
     return (
       <div className={cn(wrapClassName, className)}>

@@ -7,7 +7,7 @@ interface Props {
 }
 
 const Md2PosterHeader = ({ children, className }: Props) => {
-  return <div className={cn('text-white py-2', className)}>{children}</div>
+  return <div className={cn('text-white py-4 text-center', className)}>{children}</div>
 }
 
 export default Md2PosterHeader
