@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState, useCallback, forwardRef, useImperativeHandle } from 'react'
+import React, { ReactNode, useRef, useState, useCallback, forwardRef, useImperativeHandle } from 'react'
 import { cn } from '../../lib/utils'
 import { toBlob } from 'html-to-image'
 
