@@ -11,7 +11,7 @@ type IThemeType =
 type IAspectRatioType = 'auto' | '16/9' | '1/1' | '4/3'
 type ISizeType = 'desktop' | 'mobile'
 
-interface Props {
+interface Md2PosterProps {
   children: string | ReactNode
   className?: string
   theme?: IThemeType
@@ -88,7 +88,7 @@ const Md2Poster = ({
   canCopy,
   aspectRatio = 'auto',
   size = 'mobile',
-}: Props) => {
+}: Md2PosterProps) => {
   const aspectRatioClassName = aspectRatioMapClassName[aspectRatio]
   const themeClassName = themeMapClassName[theme]
   const ref = useRef<HTMLDivElement>(null)
@@ -151,5 +151,7 @@ const Md2Poster = ({
     )
   }
 }
+
+export type { Md2PosterProps }
 
 export default Md2Poster

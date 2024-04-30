@@ -55,12 +55,17 @@ yarn add markdown-to-poster
 Basic example:
 
 ```javascript
+<<<<<<< HEAD
 import {
   Md2Poster,
   Md2PosterContent,
   Md2PosterHeader,
   Md2PosterFooter,
 } from "markdown-to-poster";
+=======
+import 'markdown-to-poster/dist/style.css'
+import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-poster'
+>>>>>>> 86dd9ad (feat: example)
 
 // ...
 
@@ -68,7 +73,11 @@ const markdown = `
 # AI Morning Updates
 > On April 29th, what's the latest in the AI field that should be on your radar?
 ...
+<<<<<<< HEAD
 `;
+=======
+`
+>>>>>>> 86dd9ad (feat: example)
 
 // ...
 
@@ -80,7 +89,7 @@ return (
     <Md2PosterFooter>Powered by BeePoster.com</Md2PosterFooter>
   </Md2Poster>
   // ...
-);
+)
 ```
 
 To explore additional component parameters, check out the documentation: [beeposter.com/docs](https://beeposter.com/docs)

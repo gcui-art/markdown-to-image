@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import { cn } from '../../lib/utils'
 
-interface Props {
+interface Md2PosterContentProps {
   children: string | ReactNode
   className?: string
   markdownProps?: Record<string, any>
@@ -14,10 +14,10 @@ interface Props {
 
 const Md2PosterContent = ({
   children, className, markdownProps,
-  articleClassName = 'prose prose-gray prose-img:rounded-lg prose-img:border'
-}: Props) => {
-  const wrapClassName = 'flex flex-col bg-white/90 px-4 sm:px-8 py-8 rounded-2xl border shadow-2xl shadow-gray-950/50'
-  if (typeof children === 'string') {
+  articleClassName = 'prose prose-gray prose-img:rounded-lg prose-img:border prose-img:opacity-100'
+}: Md2PosterContentProps) => {
+  const wrapClassName = 'flex flex-col bg-white px-4 sm:px-8 py-8 rounded-2xl border shadow-2xl shadow-gray-950/50'
+  if (typeof children === 'string' && typeof window !== 'undefined') {
     return (
       <div className={cn(wrapClassName, className)}>
         <article className={articleClassName}>
@@ -42,5 +42,7 @@ const Md2PosterContent = ({
   }
   return <div className={cn(wrapClassName, className)}>{children}</div>
 }
+
+export type { Md2PosterContentProps }
 
 export default Md2PosterContent
