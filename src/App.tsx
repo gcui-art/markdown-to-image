@@ -3,7 +3,7 @@ import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from '.
 // import './App.css'
 
 function App() {
-  const markdownRef = useRef(null);
+  const markdownRef = useRef<any>(null);
  
   const handleCopyFromChild = () => {
     markdownRef?.current?.handleCopy();
