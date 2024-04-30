@@ -1,0 +1,44 @@
+# Guidebook
+
+## Installation
+
+Install with npm:
+
+```bash
+npm i markdown-to-poster
+```
+
+Install with pnpm:
+
+```bash
+pnpm install markdown-to-poster
+```
+
+yarn add markdown-to-poster:
+
+```bash
+yarn add markdown-to-poster
+```
+
+## Usage
+
+Basic example:
+
+```javascript
+import 'markdown-to-poster/dist/style.css'
+import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-poster'
+
+const markdown = `
+# AI Morning Updates
+> On April 29th, what's the latest in the AI field that should be on your radar?
+...
+`
+
+return (
+  <Md2Poster>
+    <Md2PosterHeader>Poster Header</Md2PosterHeader>
+    <Md2PosterContent>{markdown}</Md2PosterContent>
+    <Md2PosterFooter>Powered by BeePoster.com</Md2PosterFooter>
+  </Md2Poster>
+)
+```

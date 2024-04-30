@@ -1,13 +1,15 @@
 import { ReactNode } from 'react'
 import { cn } from '../../lib/utils'
 
-interface Props {
+interface Md2PosterFooterProps {
   children: ReactNode
   className?: string
 }
 
-const Md2PosterFooter = ({ children, className }: Props) => {
+const Md2PosterFooter = ({ children, className }: Md2PosterFooterProps) => {
   return <div className={cn('text-gray-50 py-4 text-center', className)}>{children}</div>
 }
+
+export type { Md2PosterFooterProps }
 
 export default Md2PosterFooter

@@ -13,13 +13,14 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
+    "ignoreDeprecations": "5.0",
+    "suppressImplicitAnyIndexErrors": true,
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["packages/**/*.ts", "packages/**/*.d.ts", "packages/**/*.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
