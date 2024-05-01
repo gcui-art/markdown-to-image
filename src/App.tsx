@@ -1,49 +1,16 @@
+import React, { useRef } from 'react'
 import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from './packages'
 // import './App.css'
 
-// const Footer = () => {
-//   return (
-//     <div className="border-t pt-[12px]">
-//       <div className="flex justify-between w-full">
-//         <div className="flex items-center justify-center">
-//           <blockquote className="text-sm border-l-4 pl-2 border-slate-00 text-slate-400">
-//             Power by <br />
-//             <span className="text-source">BeePoster</span>
-//           </blockquote>
-//         </div>
-//         {/* <div className="text-sm pr-2">
-//         <a href={threadUrl} target="_blank">
-//           <QRCode size={48} fgColor="#94a3b8" value={threadUrl} />
-//         </a>
-//       </div> */}
-//       </div>
-//     </div>
-//   )
-// }
-
 function App() {
-  // const MdDom = () => {
-  //   return (
-  //     <article className="prose lg:prose-xl">
-  //       <h1>Garlic bread with cheese: What the science tells us</h1>
-  //       <p>
-  //         For years parents have espoused the health benefits of eating garlic bread with cheese to their children, with
-  //         the food earning such an iconic status in our culture that kids will often dress up as warm, cheesy loaf for
-  //         Halloween.
-  //       </p>
-  //       <p>
-  //         But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases springing up
-  //         around the country.
-  //       </p>
-  //       <ul>
-  //         <li>1</li>
-  //         <li>2</li>
-  //       </ul>
-  //     </article>
-  //   )
-  // }
-
-
+  const markdownRef = useRef<any>(null);
+ 
+  const handleCopyFromChild = () => {
+    markdownRef?.current?.handleCopy();
+  };
+  const copySuccessCallback = () => {
+    alert('Copy Success');
+  }
   const markdown = `
 # AI Morning Updates
 > On April 29th, what's the latest in the AI field that should be on your radar?
@@ -63,7 +30,7 @@ function App() {
 
   return (
     <main>
-      <Md2Poster theme="SpringGradientWave" canCopy size='mobile'>
+      <Md2Poster theme="SpringGradientWave" size='mobile' ref={markdownRef} copySuccessCallback={copySuccessCallback}>
         <Md2PosterHeader className='flex justify-between items-center px-4'>
           <span>
             @Nickname
@@ -74,9 +41,7 @@ function App() {
         </Md2PosterHeader>
         <Md2PosterContent>{markdown}</Md2PosterContent>
         <Md2PosterFooter className='flex justify-center items-center gap-1'>
-          <img src="/logo.png" alt="beeposter" className='w-4 h-4' />
-          <span className='text-sm font-medium'>Powered by BeePoster.com</span>
-
+           <button onClick={handleCopyFromChild}>Copy Image</button>
         </Md2PosterFooter>
       </Md2Poster>
     </main>

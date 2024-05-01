@@ -55,6 +55,7 @@ yarn install markdown-to-poster
 简单开始：
 
 ```javascript
+import 'markdown-to-poster/dist/style.css'
 import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-poster'
 
 ...

@@ -1,8 +1,9 @@
-import { ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
 import { cn } from '../../lib/utils'
+
 
 interface Md2PosterContentProps {
   children: string | ReactNode

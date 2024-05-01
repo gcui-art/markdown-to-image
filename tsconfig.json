@@ -12,9 +12,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "ignoreDeprecations": "5.0",
-    "suppressImplicitAnyIndexErrors": true,
+    "jsx": "preserve",
+    // "ignoreDeprecations": "5.0",
+    // "suppressImplicitAnyIndexErrors": true,
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

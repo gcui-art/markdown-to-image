@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useState, useCallback } from 'react'
+import React, { ReactNode, useRef, useState, useCallback, forwardRef, useImperativeHandle } from 'react'
 import { cn } from '../../lib/utils'
 import { toBlob } from 'html-to-image'
 
@@ -19,6 +19,9 @@ interface Md2PosterProps {
   aspectRatio?: IAspectRatioType
   canCopy?: boolean
   size?: ISizeType
+  onCopy?: () => void
+  copySuccessCallback?: () => void
+  copyFailedCallback?: () => void
 }
 
 const themeMapClassName = {
@@ -80,7 +83,7 @@ const Button = ({
   )
 }
 
-const Md2Poster = ({
+const Md2Poster = forwardRef(({
   children,
   theme = 'blue',
   template = 'NewsDigest',
@@ -88,15 +91,17 @@ const Md2Poster = ({
   canCopy,
   aspectRatio = 'auto',
   size = 'mobile',
-}: Md2PosterProps) => {
+  copySuccessCallback,
+  copyFailedCallback
+}: Md2PosterProps, ref:any) => {
   const aspectRatioClassName = aspectRatioMapClassName[aspectRatio]
   const themeClassName = themeMapClassName[theme]
-  const ref = useRef<HTMLDivElement>(null)
+  const mdRef = useRef<HTMLDivElement>(null)
   const [loading, setLoading] = useState(false)
   const sizeClassName = size === 'mobile' ? 'max-w-lg p-6' : 'max-w-4xl p-16'
 
   const handleCopy = useCallback(async () => {
-    const element = ref.current
+    const element = mdRef.current
     if (element === null) {
       return
     }
@@ -109,15 +114,20 @@ const Md2Poster = ({
           'image/png': blob,
         }),
       ])
-      alert('Image copied to clipboard successfully~')
+      // alert('Image copied to clipboard successfully~')
+      copySuccessCallback?.()
       console.log('Image copied to clipboard:', blob)
     } catch (error) {
-      alert('Failed to copy image to clipboard!')
+      copyFailedCallback?.()
       console.error('Failed to copy image to clipboard:', error)
     } finally {
       setLoading(false)
     }
-  }, [ref])
+  }, [mdRef])
+
+  useImperativeHandle(ref, () => ({
+    handleCopy
+  }));
 
   const renderCopy = () => {
     return (
@@ -134,7 +144,7 @@ const Md2Poster = ({
   if (template === 'QuoteCard') {
     return (
       <>
-        <div ref={ref} className={cn('w-full', themeClassName, aspectRatioClassName, className, sizeClassName)}>
+        <div ref={mdRef} className={cn('w-full', themeClassName, aspectRatioClassName, className, sizeClassName)}>
           {children}
         </div>
         {renderCopy()}
@@ -143,14 +153,14 @@ const Md2Poster = ({
   } else {
     return (
       <>
-        <div ref={ref} className={cn("w-full", themeClassName, aspectRatioClassName, className, sizeClassName)}>
+        <div ref={mdRef} className={cn("w-full", themeClassName, aspectRatioClassName, className, sizeClassName)}>
           {children}
         </div>
         {renderCopy()}
       </>
     )
   }
-}
+})
 
 export type { Md2PosterProps }
 
