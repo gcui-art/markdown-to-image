@@ -1,6 +1,9 @@
 'use client'
 import dynamic from 'next/dynamic';
 import React, { useState, ChangeEvent, TextareaHTMLAttributes } from 'react'
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { Button } from './ui/button';
+
 
 const Md2Poster = dynamic(() => import('./MdClient'), {
   ssr: false
@@ -10,15 +13,18 @@ const Md2Poster = dynamic(() => import('./MdClient'), {
 const Textarea: React.FC<TextareaHTMLAttributes<HTMLTextAreaElement>> = ({ onChange, ...rest }) => {
   return (
     <textarea
-      className="border rounded-md p-2 w-full bg-gray-100 min-h-40 resize-none h-full"
+      className="border-none bg-gray-100 p-8 w-full resize-none h-full min-h-screen
+      focus-visible:outline-none focus-visible:ring-0 focus-visible:border-0
+      text-gray-900/70 hover:text-gray-900 focus:text-gray-900 font-light font-inter
+      "
       {...rest}
       onChange={(e) => onChange?.(e)}
     />
   )
 }
 
-const defaultMd = `
-# AI Morning News - April 29th
+const defaultMd =
+  `# AI Morning News - April 29th
 ![image](https://imageio.forbes.com/specials-images/imageserve/64b5825a5b9b4d3225e9bd15/artificial-intelligence--ai/960x0.jpg?format=jpg&width=1440)
 1. **MetaElephant Company Releases Multi-Modal Large Model XVERSE-V**: Supports image input of any aspect ratio, performs well in multiple authoritative evaluations, and has been open-sourced.
 2. **Tongyi Qianwen Team Open-Sources Billion-Parameter Model Qwen1.5-110B**: Uses Transformer decoder architecture, supports multiple languages, and has an efficient attention mechanism.
@@ -36,17 +42,26 @@ export default function Editor() {
   }
 
   return (
-    <div className="flex flex-row py-4 md:space-x-4">
+    <ScrollArea className="h-[96vh] w-full border-2 border-gray-900 rounded-xl my-4 relative">
+      <div className="flex flex-row h-full ">
         <div className="w-1/2">
           {/* Edit */}
           <Textarea placeholder="markdown" onChange={handleChange} defaultValue={mdString} />
         </div>
-        <div className="w-1/2 mx-auto flex justify-center">
+        <div className="w-1/2 mx-auto flex justify-center p-4 ">
           {/* Preview */}
           <div className='flex flex-col w-fit'>
             <Md2Poster str={mdString} />
           </div>
+
         </div>
+
       </div>
+      <div className='absolute top-4 right-4 flex flex-row gap-2 opacity-80 hover:opacity-100 transition-all'>
+        <Button className=' rounded-xl'>Copy Image</Button>
+      </div>
+
+    </ScrollArea >
+
   )
 }
