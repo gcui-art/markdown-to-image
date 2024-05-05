@@ -1,6 +1,6 @@
 'use client'
 import dynamic from 'next/dynamic';
-import React, { useState, ChangeEvent, TextareaHTMLAttributes } from 'react'
+import React, { useState, ChangeEvent, TextareaHTMLAttributes, useRef } from 'react'
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Button } from './ui/button';
 
@@ -11,6 +11,9 @@ const Md2Poster = dynamic(() => import('./MdClient'), {
 
 
 const Textarea: React.FC<TextareaHTMLAttributes<HTMLTextAreaElement>> = ({ onChange, ...rest }) => {
+
+
+
   return (
     <textarea
       className="border-none bg-gray-100 p-8 w-full resize-none h-full min-h-screen
@@ -40,7 +43,14 @@ export default function Editor() {
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setMdString(e.target.value)
   }
+  const markdownRef = useRef<any>(null);
 
+  const handleCopyFromChild = () => {
+    markdownRef?.current?.handleCopy();
+  };
+  const copySuccessCallback = () => {
+    alert('Copy Success');
+  }
   return (
     <ScrollArea className="h-[96vh] w-full border-2 border-gray-900 rounded-xl my-4 relative">
       <div className="flex flex-row h-full ">
@@ -51,14 +61,14 @@ export default function Editor() {
         <div className="w-1/2 mx-auto flex justify-center p-4 ">
           {/* Preview */}
           <div className='flex flex-col w-fit'>
-            <Md2Poster str={mdString} />
+            <Md2Poster str={mdString} copySuccessCallback={copySuccessCallback} />
           </div>
 
         </div>
 
       </div>
       <div className='absolute top-4 right-4 flex flex-row gap-2 opacity-80 hover:opacity-100 transition-all'>
-        <Button className=' rounded-xl'>Copy Image</Button>
+        <Button className=' rounded-xl' onClick={handleCopyFromChild}>Copy Image</Button>
       </div>
 
     </ScrollArea >
