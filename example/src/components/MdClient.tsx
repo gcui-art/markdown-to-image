@@ -2,9 +2,15 @@
 import 'markdown-to-poster/dist/style.css'
 import { Md2PosterContent, Md2Poster, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-poster'
 
-export default function MdClient({ str }: { str: string }) {
+export default function MdClient({
+  str,
+  copySuccessCallback
+}: {
+  str: string
+  copySuccessCallback: () => void
+}) {
   return (
-    <Md2Poster theme="SpringGradientWave" canCopy className=''>
+    <Md2Poster theme="SpringGradientWave" canCopy copySuccessCallback={copySuccessCallback} className=''>
       <Md2PosterHeader className="flex justify-center items-center px-4 font-medium text-lg">
         <span>{new Date().toISOString().slice(0, 10)}</span>
       </Md2PosterHeader>
