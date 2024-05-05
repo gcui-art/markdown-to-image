@@ -5,11 +5,13 @@ import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from '.
 function App() {
   const markdownRef = useRef<any>(null);
  
-  const handleCopyFromChild = () => {
-    markdownRef?.current?.handleCopy();
+  const handleCopy = () => {
+    markdownRef?.current?.handleCopy().then((res) => {
+      alert('promise copy')
+    });
   };
   const copySuccessCallback = () => {
-    alert('Copy Success');
+    console.log('Copy Success');
   }
   const markdown = `
 # AI Morning Updates
@@ -41,7 +43,7 @@ function App() {
         </Md2PosterHeader>
         <Md2PosterContent>{markdown}</Md2PosterContent>
         <Md2PosterFooter className='flex justify-center items-center gap-1'>
-           <button onClick={handleCopyFromChild}>Copy Image</button>
+           <button onClick={handleCopy} className='border p-2 rounded border-white'>Copy Image</button>
         </Md2PosterFooter>
       </Md2Poster>
     </main>
