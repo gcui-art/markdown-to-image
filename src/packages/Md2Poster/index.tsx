@@ -5,9 +5,16 @@ import { toBlob } from 'html-to-image'
 type ICardType = 'QuoteCard' | 'NewsDigest'
 type IThemeType =
   //gradient
-  'blue' | 'pink' | 'purple' | 'green' | 'yellow' | 'gray' | 'red' | 'indigo' |
+  | 'blue'
+  | 'pink'
+  | 'purple'
+  | 'green'
+  | 'yellow'
+  | 'gray'
+  | 'red'
+  | 'indigo'
   //image bg
-  'SpringGradientWave'
+  | 'SpringGradientWave'
 type IAspectRatioType = 'auto' | '16/9' | '1/1' | '4/3'
 type ISizeType = 'desktop' | 'mobile'
 
@@ -19,9 +26,12 @@ interface Md2PosterProps {
   aspectRatio?: IAspectRatioType
   canCopy?: boolean
   size?: ISizeType
-  onCopy?: () => void
   copySuccessCallback?: () => void
   copyFailedCallback?: () => void
+}
+
+interface Md2PosterRef {
+  handleCopy: () => Promise<unknown>
 }
 
 const themeMapClassName = {
@@ -35,7 +45,7 @@ const themeMapClassName = {
   red: 'bg-gradient-to-r from-red-500 to-orange-500',
   indigo: 'bg-gradient-to-br from-indigo-700 via-blue-600/80 to-indigo-700',
   //image bg
-  SpringGradientWave: 'bg-spring-gradient-wave bg-cover'
+  SpringGradientWave: 'bg-spring-gradient-wave bg-cover',
 }
 
 const aspectRatioMapClassName = {
@@ -83,84 +93,85 @@ const Button = ({
   )
 }
 
-const Md2Poster = forwardRef(({
-  children,
-  theme = 'blue',
-  template = 'NewsDigest',
-  className,
-  canCopy,
-  aspectRatio = 'auto',
-  size = 'mobile',
-  copySuccessCallback,
-  copyFailedCallback
-}: Md2PosterProps, ref:any) => {
-  const aspectRatioClassName = aspectRatioMapClassName[aspectRatio]
-  const themeClassName = themeMapClassName[theme]
-  const mdRef = useRef<HTMLDivElement>(null)
-  const [loading, setLoading] = useState(false)
-  const sizeClassName = size === 'mobile' ? 'max-w-lg p-6' : 'max-w-4xl p-16'
+const Md2Poster = forwardRef<Md2PosterRef, Md2PosterProps>(
+  (
+    {
+      children,
+      theme = 'blue',
+      template = 'NewsDigest',
+      className,
+      canCopy,
+      aspectRatio = 'auto',
+      size = 'mobile',
+      copySuccessCallback,
+      copyFailedCallback,
+    }: Md2PosterProps,
+    ref
+  ) => {
+    const aspectRatioClassName = aspectRatioMapClassName[aspectRatio]
+    const themeClassName = themeMapClassName[theme]
+    const mdRef = useRef<HTMLDivElement>(null)
+    const [loading, setLoading] = useState(false)
+    const sizeClassName = size === 'mobile' ? 'max-w-lg p-6' : 'max-w-4xl p-16'
 
-  const handleCopy = useCallback(async () => {
-    const element = mdRef.current
-    if (element === null) {
-      return
-    }
-    setLoading(true)
-    await sleep(100)
-    try {
-      const blob = (await toBlob(element)) as Blob
-      await navigator.clipboard.write([
-        new ClipboardItem({
-          'image/png': blob,
-        }),
-      ])
-      // alert('Image copied to clipboard successfully~')
-      copySuccessCallback?.()
-      console.log('Image copied to clipboard:', blob)
-    } catch (error) {
-      copyFailedCallback?.()
-      console.error('Failed to copy image to clipboard:', error)
-    } finally {
-      setLoading(false)
-    }
-  }, [mdRef])
+    const handleCopy = useCallback(async () => {
+      return new Promise(async (resolve, reject) => {
+        const element = mdRef.current
+        if (element === null) {
+          return
+        }
+        setLoading(true)
+        await sleep(100)
+        try {
+          const blob = (await toBlob(element)) as Blob
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              'image/png': blob,
+            }),
+          ])
+          // alert('Image copied to clipboard successfully~')
+          copySuccessCallback?.()
+          resolve(blob)
+          console.log('Image copied to clipboard:', blob)
+        } catch (error) {
+          copyFailedCallback?.()
+          reject(error)
+          console.error('Failed to copy image to clipboard:', error)
+        } finally {
+          setLoading(false)
+        }
+      })
+    }, [mdRef])
 
-  useImperativeHandle(ref, () => ({
-    handleCopy
-  }));
+    useImperativeHandle(ref, () => ({
+      handleCopy,
+    }))
 
-  const renderCopy = () => {
-    return (
-      canCopy && (
-        <span className="py-2 inline-block">
-          <Button onClick={handleCopy} loading={loading}>
-            copy
-          </Button>
-        </span>
+    const renderCopy = () => {
+      return (
+        canCopy && (
+          <span className="py-2 inline-block">
+            <Button onClick={handleCopy} loading={loading}>
+              copy
+            </Button>
+          </span>
+        )
       )
-    )
-  }
+    }
 
-  if (template === 'QuoteCard') {
     return (
       <>
-        <div ref={mdRef} className={cn('w-full', themeClassName, aspectRatioClassName, className, sizeClassName)}>
-          {children}
-        </div>
-        {renderCopy()}
-      </>
-    )
-  } else {
-    return (
-      <>
-        <div ref={mdRef} className={cn("w-full", themeClassName, aspectRatioClassName, className, sizeClassName)}>
+        <div
+          ref={mdRef}
+          className={cn('w-full relative', themeClassName, aspectRatioClassName, className, sizeClassName)}
+        >
           {children}
         </div>
         {renderCopy()}
       </>
     )
   }
-})
+)
 
 export type { Md2PosterProps }
 
