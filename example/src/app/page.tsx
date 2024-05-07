@@ -15,7 +15,6 @@ export default function Home() {
           <MdHome />
         </article>
       </Section>
-      
     </div>
   )
 }
