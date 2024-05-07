@@ -1,8 +1,11 @@
 'use client'
 import MdHome from '@/markdown/home.mdx'
 import Section from '@/components/Section'
-import Editor from '@/components/Editor'
+import dynamic from 'next/dynamic'
 
+const Editor = dynamic(() => import('@/components/Editor'), {
+ ssr: false,
+})
 export default function Home() {
   return (
     <div>

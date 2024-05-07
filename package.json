@@ -1,6 +1,6 @@
 {
   "name": "markdown-to-poster",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "type": "module",
   "license": "Apache-2.0",
   "description": "markdown-to-poster component renders Markdown as visually appealing social media images. The project also includes a built-in web editor that can be used as an online Markdown-to-poster editor with a simple one-click deployment.",
@@ -23,18 +23,19 @@
     "README.md",
     "LICENSE"
   ],
-  "main": "./dist/markdown-to-poster.umd.js",
-  "module": "./dist/markdown-to-poster.es.js",
+  "main": "./dist/markdown-to-poster.js",
+  "module": "./dist/markdown-to-poster.js",
   "types": "./dist/packages/index.d.ts",
   "exports": {
     "./dist/style.css": "./dist/style.css",
     ".": {
-      "import": "./dist/markdown-to-poster.es.js"
+      "import": "./dist/markdown-to-poster.js",
+      "types": "./dist/packages/index.d.ts"
     }
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc --p ./tsconfig-build.json && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",

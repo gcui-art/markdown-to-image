@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef, useState, useCallback, forwardRef, useImperativeHandle } from 'react'
+import { ReactNode, useRef, useState, useCallback, forwardRef, useImperativeHandle } from 'react'
 import { cn } from '../../lib/utils'
 import { toBlob } from 'html-to-image'
 
@@ -19,7 +19,7 @@ type IAspectRatioType = 'auto' | '16/9' | '1/1' | '4/3'
 type ISizeType = 'desktop' | 'mobile'
 
 interface Md2PosterProps {
-  children: string | ReactNode
+  children?: any
   className?: string
   theme?: IThemeType
   template?: ICardType
@@ -98,7 +98,6 @@ const Md2Poster = forwardRef<Md2PosterRef, Md2PosterProps>(
     {
       children,
       theme = 'blue',
-      template = 'NewsDigest',
       className,
       canCopy,
       aspectRatio = 'auto',
