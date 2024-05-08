@@ -25,8 +25,9 @@ const Md2PosterContent = ({
             components={{
               img(props) {
                 const { node, src, ...rest } = props
-                const ORIGIN_HOST = 'https://proxy.beeposter.com'
-                const newSrc = src ? `${ORIGIN_HOST}/fetch?url=${encodeURIComponent(src)}` : src
+                // const ORIGIN_HOST = 'https://proxy.beeposter.com'
+                const ORIGIN_HOST = 'https://api.allorigins.win/raw'
+                const newSrc = src ? `${ORIGIN_HOST}?url=${encodeURIComponent(src)}` : src
                 return <img {...rest} src={newSrc} />
               },
             }}
