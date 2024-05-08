@@ -38,7 +38,7 @@ export default function Editor() {
 
   const handleCopyFromChild = () => {
     markdownRef?.current?.handleCopy().then(res => {
-      alert('copy Success 111')
+      alert('copy Success!')
     }).catch(err => {
       console.log('err copying from child', err)
     })
@@ -56,7 +56,7 @@ export default function Editor() {
         <div className="w-1/2 mx-auto flex justify-center p-4 ">
           {/* Preview */}
           <div className="flex flex-col w-fit">
-            <Md2Poster theme="SpringGradientWave" copySuccessCallback={copySuccessCallback} ref={markdownRef} canCopy>
+            <Md2Poster theme="SpringGradientWave" copySuccessCallback={copySuccessCallback} ref={markdownRef}>
               <Md2PosterHeader className="flex justify-center items-center px-4 font-medium text-lg">
                 <span>{new Date().toISOString().slice(0, 10)}</span>
               </Md2PosterHeader>
