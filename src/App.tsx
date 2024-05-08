@@ -17,7 +17,7 @@ function App() {
 # AI Morning Updates
 > On April 29th, what's the latest in the AI field that should be on your radar?
 
-![image](https://imageio.forbes.com/specials-images/imageserve/64b5825a5b9b4d3225e9bd15/artificial-intelligence--ai/960x0.jpg?format=jpg&width=1440)
+![image](https://imageio.forbes.com/specials-images/imageserve/64b5825a5b9b4d3225e9bd15/artificial-intelligence--ai/960x0.jpg?format=jpg&width=1440&)
 1. **Tech hiccups in AI car race: NTU team misses final** : Collaboration with UAE tech group faces technical challenges in international AI car race.
 2. **AI complicates kids' online safety: Parents take charge** : Rapid AI evolution poses challenges, prompting parents to take active measures for children's safety.
 3. **AI boom's secret winners: Companies fueling growth** : Investors find unique opportunities in stock market's AI boom, with certain companies driving progress.
