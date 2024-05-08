@@ -3,6 +3,7 @@ import React, { useState, ChangeEvent, TextareaHTMLAttributes, useRef } from 're
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Button } from './ui/button'
 import { Md2PosterContent, Md2Poster, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-poster'
+import { Copy, LoaderCircle } from 'lucide-react';
 
 
 const Textarea: React.FC<TextareaHTMLAttributes<HTMLTextAreaElement>> = ({ onChange, ...rest }) => {
@@ -19,7 +20,7 @@ const Textarea: React.FC<TextareaHTMLAttributes<HTMLTextAreaElement>> = ({ onCha
 }
 
 const defaultMd = `# AI Morning News - April 29th
-![image](https://imageio.forbes.com/specials-images/imageserve/64b5825a5b9b4d3225e9bd15/artificial-intelligence--ai/960x0.jpg?format=jpg&width=1440&)
+![image](https://imageio.forbes.com/specials-images/imageserve/64b5825a5b9b4d3225e9bd15/artificial-intelligence--ai/960x0.jpg?format=jpg&width=1440)
 1. **MetaElephant Company Releases Multi-Modal Large Model XVERSE-V**: Supports image input of any aspect ratio, performs well in multiple authoritative evaluations, and has been open-sourced.
 2. **Tongyi Qianwen Team Open-Sources Billion-Parameter Model Qwen1.5-110B**: Uses Transformer decoder architecture, supports multiple languages, and has an efficient attention mechanism.
 3. **Shengshu Technology and Tsinghua University Release Video Large Model Vidu**: Adopts a fusion architecture of Diffusion and Transformer, generates high-definition videos with one click, leading internationally.
@@ -35,11 +36,14 @@ export default function Editor() {
     setMdString(e.target.value)
   }
   const markdownRef = useRef<any>(null)
-
+  const [copyLoading, setCopyLoading] = useState(false)
   const handleCopyFromChild = () => {
+    setCopyLoading(true)
     markdownRef?.current?.handleCopy().then(res => {
-      alert('copy Success 111')
+      setCopyLoading(false)
+      alert('Copy Success!')
     }).catch(err => {
+      setCopyLoading(false)
       console.log('err copying from child', err)
     })
   }
@@ -56,7 +60,7 @@ export default function Editor() {
         <div className="w-1/2 mx-auto flex justify-center p-4 ">
           {/* Preview */}
           <div className="flex flex-col w-fit">
-            <Md2Poster theme="SpringGradientWave" copySuccessCallback={copySuccessCallback} ref={markdownRef} canCopy>
+            <Md2Poster theme="SpringGradientWave" copySuccessCallback={copySuccessCallback} ref={markdownRef}>
               <Md2PosterHeader className="flex justify-center items-center px-4 font-medium text-lg">
                 <span>{new Date().toISOString().slice(0, 10)}</span>
               </Md2PosterHeader>
@@ -70,7 +74,10 @@ export default function Editor() {
         </div>
       </div>
       <div className="absolute top-4 right-4 flex flex-row gap-2 opacity-80 hover:opacity-100 transition-all">
-        <Button className=" rounded-xl" onClick={handleCopyFromChild}>
+        <Button className=" rounded-xl" onClick={handleCopyFromChild} {...copyLoading ? { disabled: true } : {}}>
+          {copyLoading ?
+            <LoaderCircle className="w-4 h-4 mr-1 animate-spin" />
+            : <Copy className="w-4 h-4 mr-1" />}
           Copy Image
         </Button>
       </div>

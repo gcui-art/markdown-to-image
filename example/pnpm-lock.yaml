@@ -33,8 +33,8 @@ dependencies:
     specifier: ^0.378.0
     version: 0.378.0(react@18.3.1)
   markdown-to-poster:
-    specifier: ^0.0.3
-    version: 0.0.3(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
+    specifier: ^0.0.7
+    version: 0.0.7(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
   next:
     specifier: 14.2.3
     version: 14.2.3(react-dom@18.3.1)(react@18.3.1)
@@ -2652,8 +2652,8 @@ packages:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
     dev: false
 
-  /markdown-to-poster@0.0.3(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-VVev3ZiXLH9yZDLMYQv+CHSHHDu01xDBjqkDC/L2sN29LdM5CqDUJQzHDuLgF6sagVDmJWzhrQaZq0rFcGTKaA==}
+  /markdown-to-poster@0.0.7(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-mTQZoRMEG3s4KWwgqCf4f8JEKDMS6f+4BFsxXPfFcZzr68d3pOaju6HXYa7AcXq3Esvbx0TSAOACSkfLSpiQcg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
