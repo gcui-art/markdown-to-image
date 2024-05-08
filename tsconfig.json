@@ -12,7 +12,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
+    "declaration": true,
+    "jsx": "react-jsx",
+    "typeRoots": ["./dist/packages/index.d.ts"],
     // "ignoreDeprecations": "5.0",
     // "suppressImplicitAnyIndexErrors": true,
     /* Linting */
@@ -21,6 +23,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["packages/**/*.ts", "packages/**/*.d.ts", "packages/**/*.tsx"],
+  "include": ["./src/packages"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

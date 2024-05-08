@@ -1,8 +1,7 @@
-import React, { ReactNode } from 'react'
 import { cn } from '../../lib/utils'
 
 interface Md2PosterFooterProps {
-  children: ReactNode
+  children?: any
   className?: string
 }
 
