@@ -7,17 +7,20 @@ This React component renders Markdown as visually appealing social media images.
 - [English](./README.md) | [中文](./README_CN.md)
 - [DEMO & Web Editor](https://beeposter.com)
 - [Deploy Editor with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/gcui-art/markdown-to-poster&root-directory=example&project-name=markdown-to-poster&repository-name=markdown-to-poster)
+- [NPM:markdown-to-poster](https://www.npmjs.com/package/markdown-to-poster)
 
 ⭐ Click the Star and Watch buttons to stay updated on our latest developments.
 
 ## Features
 
 - [x] Render Markdown as poster images optimized for social sharing
-- [x] Two built-in templates with support for custom templates
+- [x] One built-in templates with support for custom templates
 - [x] Customizable themes with 9 pre-built options
 - [x] Copy output as an image
 - [x] One-click deployment to platforms like Vercel
+- [x] Integrated image CORS proxy for easy insertion of online images into posters
 - [ ] Copy output as HTML code for pasting into emails and editors
+- [ ] More built-in templates
 
 ## Getting Started
 
