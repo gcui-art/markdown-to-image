@@ -7,17 +7,20 @@
 - [English](./README.md) | [中文](./README_CN.md)
 - [DEMO & WEB Editor](https://beeposter.com)
 - [Deploy Editor with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/gcui-art/markdown-to-poster&root-directory=example&project-name=markdown-to-poster&repository-name=markdown-to-poster)
+- [NPM:markdown-to-poster](https://www.npmjs.com/package/markdown-to-poster)
 
 ⭐ 点击 Star 和 Watch 按钮，跟踪我们的最新进展。
 
 ## 功能
 
 - [x] 将 Markdown 渲染为适合社交分享的海报图片
-- [x] 内置两个模板，支持模板扩展
+- [x] 内置一个模板，支持模板扩展
 - [x] 支持自定义主题，并且已内置9个主题
 - [x] 支持复制为图像
 - [x] 支持一键部署到 Vercel 等
+- [x] 已集成图片跨域代理，可以方便的插入在线图片生成图文海报
 - [ ] 支持复制为HTML 代码，可粘贴到电子邮件和一些编辑器中
+- [ ] 更多内置模板
 
 ## 如何使用
 
