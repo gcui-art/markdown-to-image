@@ -136,7 +136,7 @@ const Editor = dynamic(() => import('@/components/Editor'), {
 ```javascript
 // Editor.tsx
 import React from 'react'
-import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from './packages'
+import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-poster'
 
 function Editor() {
   const markdown = `
