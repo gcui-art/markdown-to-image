@@ -1,6 +1,6 @@
 {
   "name": "markdown-to-poster",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "license": "Apache-2.0",
   "description": "markdown-to-poster component renders Markdown as visually appealing social media images. The project also includes a built-in web editor that can be used as an online Markdown-to-poster editor with a simple one-click deployment.",
