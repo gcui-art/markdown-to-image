@@ -1,7 +1,6 @@
 import { ReactNode, useRef, useState, useCallback, forwardRef, useImperativeHandle } from 'react'
 import { cn } from '../../lib/utils'
-import { toBlob } from 'html-to-image'
-
+import { domToBlob } from 'modern-screenshot'
 type ICardType = 'QuoteCard' | 'NewsDigest'
 type IThemeType =
   //gradient
@@ -113,6 +112,7 @@ const Md2Poster = forwardRef<Md2PosterRef, Md2PosterProps>(
     const [loading, setLoading] = useState(false)
     const sizeClassName = size === 'mobile' ? 'max-w-lg p-6' : 'max-w-4xl p-16'
 
+
     const handleCopy = useCallback(async () => {
       return new Promise(async (resolve, reject) => {
         const element = mdRef.current
@@ -122,7 +122,7 @@ const Md2Poster = forwardRef<Md2PosterRef, Md2PosterProps>(
         setLoading(true)
         await sleep(100)
         try {
-          const blob = (await toBlob(element)) as Blob
+          const blob = (await domToBlob(element)) as Blob
           await navigator.clipboard.write([
             new ClipboardItem({
               'image/png': blob,
