@@ -15,6 +15,8 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Switch } from '@/components/ui/switch'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Textarea } from '@/components/ui/textarea'
+import MDEditor from '@uiw/react-md-editor';
+
 
 export function SwitchCopy({
   onChange,
@@ -140,7 +142,7 @@ export default function EditProps() {
         </CardHeader>
         <CardContent>
           <div className="flex">
-            <div className="w-1/3 space-y-4 pr-4">
+            <div className="w-1/2 space-y-4 pr-4">
               <div className="flex items-center space-x-2">
                 <div className="text-gray-400">theme:</div>
                 <SelectTheme defaultValue={theme} onChange={(v) => setTheme(v)} />
@@ -155,7 +157,13 @@ export default function EditProps() {
               </div>
               <div className="flex flex-col space-y-2">
                 <div className="text-gray-400">Md2PosterContent:</div>
-                <Textarea
+                <MDEditor
+                  height={800}
+                  preview='edit'
+                  value={mdString}
+                  onChange={(value?: string) => setMdString(value||"")}
+                />
+                {/* <Textarea
                   ref={textareaRef}
                   className="min-h-96"
                   placeholder="Type your markdown here."
@@ -163,7 +171,7 @@ export default function EditProps() {
                   onChange={(e) => {
                     setMdString(e.target.value)
                   }}
-                />
+                /> */}
               </div>
               {/* <div className='flex items-center space-x-2'>
           <div className='text-gray-400'>aspectRatio:</div>
