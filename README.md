@@ -5,7 +5,7 @@ This React component renders Markdown as visually appealing social media images.
 ![markdown-to-poster banner](https://github.com/gcui-art/markdown-to-poster/blob/main/public/banner.jpg)
 
 - [English](./README.md) | [中文](./README_CN.md)
-- [DEMO & Web Editor](https://beeposter.com)
+- [DEMO & Web Editor](https://readpo.com/en/poster)
 - [Deploy Editor with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/gcui-art/markdown-to-poster&root-directory=example&project-name=markdown-to-poster&repository-name=markdown-to-poster)
 - [NPM:markdown-to-poster](https://www.npmjs.com/package/markdown-to-poster)
 
@@ -76,19 +76,19 @@ return (
   <Md2Poster>
     <Md2PosterHeader>Poster Header</Md2PosterHeader>
     <Md2PosterContent>{markdown}</Md2PosterContent>
-    <Md2PosterFooter>Powered by BeePoster.com</Md2PosterFooter>
+    <Md2PosterFooter>Powered by ReadPo.com</Md2PosterFooter>
   </Md2Poster>
   // ...
 )
 ```
 
-To explore additional component parameters, check out the documentation: [beeposter.com/docs](https://beeposter.com/docs)
+To explore additional component parameters, check out the documentation: [readpo.com/docs](https://readpo.com)
 
 ### Using the Web Editor
 
 #### Official Web Editor
 
-👉 Visit: [beeposter.com](https://beeposter.com)
+👉 Visit: [readpo.com](https://readpo.com/en/poster)
 
 #### Deploying Your Own Web Editor
 
@@ -114,7 +114,7 @@ We use GitHub Issues to manage feedback. Feel free to open an issue, and we'll a
 ## Related Links
 
 - Our other open source projects: [Suno AI API](https://github.com/gcui-art/suno-api)
-- Demo site: [beeposter.com](https://beeposter.com)
+- Demo site: [https://readpo.com/poster](https://readpo.com/en/poster)
 - NPM Package: [npm:markdown-to-poster](https://www.npmjs.com/package/@gcui/markdown-to-poster)
 
 ## FQA
