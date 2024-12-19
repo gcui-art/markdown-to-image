@@ -2,7 +2,7 @@
 
 This React component renders Markdown as visually appealing social media images. The project also includes a built-in web editor that can be used as an online Markdown-to-poster editor with a simple one-click deployment.
 
-![markdown-to-image banner](https://github.com/gcui-art/markdown-to-image/blob/main/public/banner.jpg)
+![markdown-to-image banner](https://github.com/user-attachments/assets/ef06f52d-ebef-4854-81b2-5b96cdfb75bf)
 
 - [English](./README.md) | [中文](./README_CN.md)
 - [DEMO & Web Editor](https://readpo.com/en/poster)
