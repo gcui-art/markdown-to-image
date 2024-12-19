@@ -53,9 +53,9 @@ importers:
       lucide-react:
         specifier: ^0.378.0
         version: 0.378.0(react@18.3.1)
-      markdown-to-poster:
-        specifier: ^0.0.9
-        version: 0.0.9(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      markdown-to-image:
+        specifier: ^0.0.10
+        version: 0.0.10(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next:
         specifier: 14.2.3
         version: 14.2.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1512,9 +1512,6 @@ packages:
   hastscript@8.0.0:
     resolution: {integrity: sha512-dMOtzCEd3ABUeSIISmrETiKuyydk1w0pa+gE/uormcTpSYuaNJPbX1NU3JLyscSLjwAQM8bWMhhIlnCqnRvDTw==}
 
-  html-to-image@1.11.11:
-    resolution: {integrity: sha512-9gux8QhvjRO/erSnDPv28noDZcPZmYE7e1vFsBLKLlRlKDSqNJYebj6Qz1TGd5lsRV+X+xYyjCKjuZdABinWjA==}
-
   html-url-attributes@3.0.0:
     resolution: {integrity: sha512-/sXbVCWayk6GDVg3ctOX6nxaVj7So40FcFAnWlWGNAB1LpYKcV5Cd10APjPjW80O7zYW2MsjBV4zZ7IZO5fVow==}
 
@@ -1789,6 +1786,11 @@ packages:
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
 
+  lucide-react@0.468.0:
+    resolution: {integrity: sha512-6koYRhnM2N0GGZIdXzSeiNwguv1gt/FAjZOiPl76roBi3xKEXa4WmfpxgQwTTL4KipXjefrnf3oV4IsYhi4JFA==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
+
   markdown-extensions@2.0.0:
     resolution: {integrity: sha512-o5vL7aDWatOTX8LzaS1WMoaoxIiLRQJuIKKe2wAw6IeULDHaqbiqiggmx+pKvZDb1Sj+pE46Sn1T7lCqfFtg1Q==}
     engines: {node: '>=16'}
@@ -1796,8 +1798,8 @@ packages:
   markdown-table@3.0.3:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
 
-  markdown-to-poster@0.0.9:
-    resolution: {integrity: sha512-Zlqp0bPuICPdEgpBzcjTeZ8RqqN+WhuWsIQRtP0jFw4gv0SLrGyE5n8dtkY27JLoxgnDn6+bFkgWk1HyI6aYmA==}
+  markdown-to-image@0.0.10:
+    resolution: {integrity: sha512-MgYX1dLXKFIboKvW/ZQ5istL4Yzb6WMLuzzTQsi0Q9Zh+qyPlQo82Y36xHQlSpHhDV4Cz4/g6WP0JxD1JUsDWQ==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -1991,6 +1993,9 @@ packages:
   minipass@7.0.4:
     resolution: {integrity: sha512-jYofLM5Dam9279rdkWzqHozUo4ybjdZmCsDHePy5V/PbBcVMiSZR97gmAy45aqi8CK1lG2ECd356FU86avfwUQ==}
     engines: {node: '>=16 || 14 >=14.17'}
+
+  modern-screenshot@4.5.5:
+    resolution: {integrity: sha512-k5AC0UjY8YccnKn53upeQMzgDdPYkDN/706ma3yPHCwOZi+AoL0NeMlLS3nQwA/s0xrM7s8WO+UWnx5YJNpQeA==}
 
   ms@2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
@@ -4545,8 +4550,6 @@ snapshots:
       property-information: 6.5.0
       space-separated-tokens: 2.0.2
 
-  html-to-image@1.11.11: {}
-
   html-url-attributes@3.0.0: {}
 
   html-void-elements@3.0.0: {}
@@ -4796,14 +4799,20 @@ snapshots:
     dependencies:
       react: 18.3.1
 
+  lucide-react@0.468.0(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+
   markdown-extensions@2.0.0: {}
 
   markdown-table@3.0.3: {}
 
-  markdown-to-poster@0.0.9(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  markdown-to-image@0.0.10(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
+      '@uiw/react-md-editor': 4.0.5(@types/react@18.3.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       clsx: 2.1.1
-      html-to-image: 1.11.11
+      lucide-react: 0.468.0(react@18.3.1)
+      modern-screenshot: 4.5.5
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-markdown: 9.0.1(@types/react@18.3.1)(react@18.3.1)
@@ -5271,6 +5280,8 @@ snapshots:
   minimist@1.2.8: {}
 
   minipass@7.0.4: {}
+
+  modern-screenshot@4.5.5: {}
 
   ms@2.1.2: {}
 
