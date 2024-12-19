@@ -2,12 +2,12 @@
 
 这个 React 组件用于将 Markdown 渲染为漂亮的社交媒体图片。此外，该项目还包括一个内置的 WEB Editor，一键部署后，可以当做 Markdown 转海报图片在线编辑器使用。
 
-![markdown-to-poster banner](https://github.com/gcui-art/markdown-to-poster/blob/main/public/banner.jpg)
+![markdown-to-image banner](https://github.com/gcui-art/markdown-to-image/blob/main/public/banner.jpg)
 
 - [English](./README.md) | [中文](./README_CN.md)
 - [DEMO & WEB Editor](https://readpo.com/zh/poster)
-- [Deploy Editor with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/gcui-art/markdown-to-poster&root-directory=example&project-name=markdown-to-poster&repository-name=markdown-to-poster)
-- [NPM:markdown-to-poster](https://www.npmjs.com/package/markdown-to-poster)
+- [Deploy Editor with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/gcui-art/markdown-to-image&root-directory=example&project-name=markdown-to-image&repository-name=markdown-to-image)
+- [NPM:markdown-to-image](https://www.npmjs.com/package/markdown-to-image)
 
 ⭐ 点击 Star 和 Watch 按钮，跟踪我们的最新进展。
 
@@ -19,38 +19,38 @@
 - [x] 支持复制为图像
 - [x] 支持一键部署到 Vercel 等
 - [x] 已集成图片跨域代理，可以方便的插入在线图片生成图文海报
-- [ ] 支持复制为HTML 代码，可粘贴到电子邮件和一些编辑器中
+- [x] 支持复制为HTML 代码，可粘贴到电子邮件和一些编辑器中
 - [ ] 更多内置模板
 
 ## 如何使用
 
-有两种使用 markdown-to-poster 的方式：
+有两种使用 markdown-to-image 的方式：
 
-- 在项目中集成：markdown-to-poster 已导出为一个 React 组件，可以直接集成到您自己的项目中。
+- 在项目中集成：markdown-to-image 已导出为一个 React 组件，可以直接集成到您自己的项目中。
 - 使用WEB UI：example路径中自带了一个 WEB Editor，部署后，可以当做在线编辑器使用。
 
 ### 在你的项目中集成
 
-`markdown-to-poster`导出了一个叫 Md2Poster 的组件以及其他三个子组件，你可以通过 npm 等安装使用。
+`markdown-to-image`导出了一个叫 Md2Poster 的组件以及其他三个子组件，你可以通过 npm 等安装使用。
 
 #### 安装
 
 用 npm 安装：
 
 ```bash
-npm i markdown-to-poster
+npm i markdown-to-image
 ```
 
 用 pnpm 安装：
 
 ```bash
-pnpm install markdown-to-poster
+pnpm install markdown-to-image
 ```
 
 用 yarn 安装：
 
 ```bash
-yarn install markdown-to-poster
+yarn install markdown-to-image
 ```
 
 #### 使用
@@ -58,8 +58,8 @@ yarn install markdown-to-poster
 简单开始：
 
 ```javascript
-import 'markdown-to-poster/dist/style.css'
-import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-poster'
+import 'markdown-to-image/dist/style.css'
+import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-image'
 
 ...
 
@@ -86,8 +86,6 @@ return (
 )
 ```
 
-更多组件参数请阅读文档：[ReadPo.com/docs](https://ReadPo.com)
-
 ### 使用在线编辑器
 
 #### 使用官方部署的在线编辑器
@@ -96,7 +94,7 @@ return (
 
 #### 部署自己的在线编辑器
 
-这里使用Vercel进行部署，点击后一键部署：[部署 Editor 到 Vercel](https://vercel.com/new/clone?repository-url=https://github.com/gcui-art/markdown-to-poster&root-directory=example&project-name=markdown-to-poster&repository-name=markdown-to-poster)
+这里使用Vercel进行部署，点击后一键部署：[部署 Editor 到 Vercel](https://vercel.com/new/clone?repository-url=https://github.com/gcui-art/markdown-to-image&root-directory=example&project-name=markdown-to-image&repository-name=markdown-to-image)
 
 ## 贡献指南
 
@@ -119,7 +117,7 @@ return (
 
 - 我们的其他开源项目: [Suno AI API](https://github.com/gcui-art/suno-api)
 - 演示站点: [https://readpo.com](https://readpo.com/zh/poster)
-- NPM Package：[npm:markdown-to-poster](https://www.npmjs.com/package/markdown-to-poster)
+- NPM Package：[npm:markdown-to-image](https://www.npmjs.com/package/markdown-to-image)
 
 ## 常见问题
 
@@ -136,7 +134,7 @@ const Editor = dynamic(() => import('@/components/Editor'), {
 ```javascript
 // Editor.tsx
 import React from 'react'
-import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-poster'
+import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-image'
 
 function Editor() {
   const markdown = `

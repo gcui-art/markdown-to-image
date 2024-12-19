@@ -1,13 +1,13 @@
-# Markdown To Poster
+# Markdown To Image / Markdown Poster
 
 This React component renders Markdown as visually appealing social media images. The project also includes a built-in web editor that can be used as an online Markdown-to-poster editor with a simple one-click deployment.
 
-![markdown-to-poster banner](https://github.com/gcui-art/markdown-to-poster/blob/main/public/banner.jpg)
+![markdown-to-image banner](https://github.com/gcui-art/markdown-to-image/blob/main/public/banner.jpg)
 
 - [English](./README.md) | [中文](./README_CN.md)
 - [DEMO & Web Editor](https://readpo.com/en/poster)
-- [Deploy Editor with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/gcui-art/markdown-to-poster&root-directory=example&project-name=markdown-to-poster&repository-name=markdown-to-poster)
-- [NPM:markdown-to-poster](https://www.npmjs.com/package/markdown-to-poster)
+- [Deploy Editor with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/gcui-art/markdown-to-image&root-directory=example&project-name=markdown-to-image&repository-name=markdown-to-image)
+- [NPM:markdown-to-image](https://www.npmjs.com/package/markdown-to-image)
 
 ⭐ Click the Star and Watch buttons to stay updated on our latest developments.
 
@@ -19,7 +19,7 @@ This React component renders Markdown as visually appealing social media images.
 - [x] Copy output as an image
 - [x] One-click deployment to platforms like Vercel
 - [x] Integrated image CORS proxy for easy insertion of online images into posters
-- [ ] Copy output as HTML code for pasting into emails and editors
+- [x] Copy output as HTML code for pasting into emails and editors
 - [ ] More built-in templates
 
 ## Getting Started
@@ -38,19 +38,19 @@ There are two ways to use markdown-to-poster:
 Install with npm:
 
 ```bash
-npm i markdown-to-poster
+npm i markdown-to-image
 ```
 
 Install with pnpm:
 
 ```bash
-pnpm install markdown-to-poster
+pnpm install markdown-to-image
 ```
 
-yarn add markdown-to-poster:
+yarn add markdown-to-image:
 
 ```bash
-yarn add markdown-to-poster
+yarn add markdown-to-image
 ```
 
 #### Usage
@@ -58,8 +58,8 @@ yarn add markdown-to-poster
 Basic example:
 
 ```javascript
-import 'markdown-to-poster/dist/style.css'
-import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-poster'
+import 'markdown-to-image/dist/style.css'
+import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-image'
 
 // ...
 
@@ -82,8 +82,6 @@ return (
 )
 ```
 
-To explore additional component parameters, check out the documentation: [readpo.com/docs](https://readpo.com)
-
 ### Using the Web Editor
 
 #### Official Web Editor
@@ -92,7 +90,7 @@ To explore additional component parameters, check out the documentation: [readpo
 
 #### Deploying Your Own Web Editor
 
-[Deploy Editor with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/gcui-art/markdown-to-poster&root-directory=example&project-name=markdown-to-poster&repository-name=markdown-to-poster)
+[Deploy Editor with Vercel](https://vercel.com/new/clone?repository-url=https://github.com/gcui-art/markdown-to-image&root-directory=example&project-name=markdown-to-image&repository-name=markdown-to-image)
 
 ## Contributing
 
@@ -115,7 +113,7 @@ We use GitHub Issues to manage feedback. Feel free to open an issue, and we'll a
 
 - Our other open source projects: [Suno AI API](https://github.com/gcui-art/suno-api)
 - Demo site: [https://readpo.com/poster](https://readpo.com/en/poster)
-- NPM Package: [npm:markdown-to-poster](https://www.npmjs.com/package/@gcui/markdown-to-poster)
+- NPM Package: [npm:markdown-to-image](https://www.npmjs.com/package/markdown-to-image)
 
 ## FQA
 
@@ -132,7 +130,7 @@ const Editor = dynamic(() => import('@/components/Editor'), {
 ```javascript
 // Editor.tsx
 import React from 'react'
-import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-poster'
+import { Md2Poster, Md2PosterContent, Md2PosterHeader, Md2PosterFooter } from 'markdown-to-image'
 
 function Editor() {
   const markdown = `

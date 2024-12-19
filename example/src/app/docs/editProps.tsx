@@ -12,10 +12,9 @@ import {
 import { Md2PosterContent, Md2Poster, Md2PosterHeader, Md2PosterFooter, Md2PosterProps } from 'markdown-to-poster'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
-import { Switch } from '@/components/ui/switch'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { Textarea } from '@/components/ui/textarea'
 import MDEditor from '@uiw/react-md-editor';
+import { Switch } from '@/components/ui/switch'
 
 
 export function SwitchCopy({
@@ -193,7 +192,7 @@ export default function EditProps() {
                 <Md2PosterContent>{mdString}</Md2PosterContent>
                 <Md2PosterFooter className="text-center">
                   <img src="/logo.png" alt="logo" className="inline-block mr-2 w-5" />
-                  Powered by BeePoster.com
+                  Powered by readpo.com
                 </Md2PosterFooter>
               </Md2Poster>
             </div>

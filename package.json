@@ -1,21 +1,22 @@
 {
-  "name": "markdown-to-poster",
-  "version": "0.0.9",
+  "name": "markdown-to-image",
+  "version": "0.0.10",
   "type": "module",
   "license": "Apache-2.0",
-  "description": "markdown-to-poster component renders Markdown as visually appealing social media images. The project also includes a built-in web editor that can be used as an online Markdown-to-poster editor with a simple one-click deployment.",
+  "description": "markdown-to-image component renders Markdown as visually appealing social media images. The project also includes a built-in web editor that can be used as an online Markdown-to-poster editor with a simple one-click deployment.",
   "keywords": [
     "markdown",
+    "image",
     "poster",
     "react",
     "vite",
     "tailwindcss",
     "typescript"
   ],
-  "homepage": "https://beeposter.com",
+  "homepage": "https://readpo.com/poster",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gcui-art/markdown-to-poster.git"
+    "url": "git+https://github.com/gcui-art/markdown-to-image.git"
   },
   "files": [
     "dist",
@@ -23,13 +24,13 @@
     "README.md",
     "LICENSE"
   ],
-  "main": "./dist/markdown-to-poster.js",
-  "module": "./dist/markdown-to-poster.js",
+  "main": "./dist/markdown-to-image.js",
+  "module": "./dist/markdown-to-image.js",
   "types": "./dist/packages/index.d.ts",
   "exports": {
     "./dist/style.css": "./dist/style.css",
     ".": {
-      "import": "./dist/markdown-to-poster.js",
+      "import": "./dist/markdown-to-image.js",
       "types": "./dist/packages/index.d.ts"
     }
   },
@@ -81,7 +82,9 @@
     "vite-plugin-dts": "^3.9.0"
   },
   "dependencies": {
+    "@uiw/react-md-editor": "^4.0.5",
     "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
     "modern-screenshot": "^4.4.39",
     "react-markdown": "^9.0.1",
     "rehype-raw": "^7.0.0",

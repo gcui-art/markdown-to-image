@@ -23,9 +23,11 @@ const Md2PosterContent = ({
         <article className={articleClassName}>
           <Markdown
             components={{
-              img(props) {
-                const { node, src, ...rest } = props
-                // const ORIGIN_HOST = 'https://proxy.beeposter.com'
+              img: ({ node, src, ...rest }: {
+                node?: any;
+                src?: string;
+                [key: string]: any;
+              }) => {
                 const ORIGIN_HOST = 'https://api.allorigins.win/raw'
                 const newSrc = src ? `${ORIGIN_HOST}?url=${encodeURIComponent(src)}` : src
                 return <img {...rest} src={newSrc} />

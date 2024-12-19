@@ -67,7 +67,7 @@ export default function Editor() {
               <Md2PosterContent>{mdString}</Md2PosterContent>
               <Md2PosterFooter className='text-center'>
                 <img src="/logo.png" alt="logo" className='inline-block mr-2 w-5' />
-                Powered by BeePoster.com
+                Powered by ReadPo.com
               </Md2PosterFooter>
             </Md2Poster>
           </div>
