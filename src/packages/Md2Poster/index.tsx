@@ -159,7 +159,7 @@ const Md2Poster = forwardRef<Md2PosterRef, Md2PosterProps>(
     }
 
     return (
-      <>
+      <div className="markdown-to-image-root">
         <div
           ref={mdRef}
           className={cn('w-full relative', themeClassName, aspectRatioClassName, className, sizeClassName)}
@@ -167,7 +167,7 @@ const Md2Poster = forwardRef<Md2PosterRef, Md2PosterProps>(
           {children}
         </div>
         {renderCopy()}
-      </>
+      </div>
     )
   }
 )
