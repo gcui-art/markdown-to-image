@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { Md2PosterContent, Md2Poster, Md2PosterHeader, Md2PosterFooter, Md2PosterProps } from 'markdown-to-poster'
+import { Md2PosterContent, Md2Poster, Md2PosterHeader, Md2PosterFooter, Md2PosterProps } from 'markdown-to-image'
 import { Label } from '@/components/ui/label'
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'

@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
-import 'markdown-to-poster/dist/style.css'
+import 'markdown-to-image/dist/style.css'
 import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
