@@ -1,3 +1,5 @@
+'use client'
+
 import dynamic from 'next/dynamic'
 import MdDocs from '@/markdown/docs.mdx'
 import Section from '@/components/Section'
